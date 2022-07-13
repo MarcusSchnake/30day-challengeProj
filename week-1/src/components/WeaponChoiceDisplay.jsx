@@ -8,9 +8,9 @@ const WeaponChoiceDisplay = () => {
     */
     return <>
         <section>
-            <button class="button border p-2 mx-2">Rock</button>
-            <button class="button border p-2 mx-2">Paper</button>
-            <button class="button border p-2 mx-2">Scissors</button>
+            <button className="button border p-2 mx-2">Rock</button>
+            <button className="button border p-2 mx-2">Paper</button>
+            <button className="button border p-2 mx-2">Scissors</button>
         </section>
     </>
 }

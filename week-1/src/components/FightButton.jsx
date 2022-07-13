@@ -6,7 +6,7 @@ const FightButton = ({emoji = null}) => {
     */
     return (
         <>
-            <button class="button border px-4 text-red-500 mt-4">FIGHT! {emoji}</button>
+            <button className="button border px-4 text-red-500 mt-4">FIGHT! {emoji}</button>
         </>
     )
 }
