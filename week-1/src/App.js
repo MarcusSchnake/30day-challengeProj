@@ -24,44 +24,23 @@ import { useState } from "react";
   const paper = 1;
   const rock = 2;
   const scissors = 3;
-  const player1Choice = rock;
-  const player2Choice = paper;
-
-  // function computerPick(){
-  //   const randNum = Math.floor(Math.random()* 3 )+1;
-
-  //   switch(randNum) {
-  //     case 1:
-  //     computerPick= rock;
-  //     break;
-  //     case 1:
-  //     computerPick= paper;
-  //     break;
-  //     case 1:
-  //     computerPick= scissors;
-  //     break;
-  //   }
-  // }
   
-  // function playerPick() {
-  //   document.addEventListener(onclick)
-    
-  // }
+  
+
+  function computerPick(){
+
+    return Math.floor(Math.random()* 3 )+1;
+
+  }
+  
+
 
 //create function that sets button state to 0, onclick passes value of const
 
 
-
-// userInput = userInput.toLowerCase();
-//   if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-//     return  userInput;
-//   }
-//   else {
-//     console.log('error')
-//   }
-
-function gameLogic() {
-  switch (((player1Choice % 3) - (player2Choice % 3) + 3) % 3) {
+function gameLogic(player1Choice,computerPick) {
+  console.log(player1Choice, computerPick)
+  switch (((player1Choice % 3) - (computerPick % 3) + 3) % 3) { 
     
     case (1):
       console.log("player lost");
@@ -78,9 +57,8 @@ function gameLogic() {
 };
 
 function App() {
-  //gameLogic();
-    const[playerChoice, setPlayerChoice] = useState(null)
-    console.log(playerChoice)
+  const[playerChoice, setPlayerChoice] = useState(null)
+  gameLogic(playerChoice, computerPick());
   return (
     <div className="App">
       <Result />

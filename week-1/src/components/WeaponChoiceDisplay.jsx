@@ -9,12 +9,29 @@ const WeaponChoiceDisplay = (props) => {
     * 3. Reset selected button once it concludes the results
     * 4. Bonus: animate button if the user won the match
     */
-   console.log(props.playerChoice)
+  
     return <>
         <section>
-            <button className={`button border p-2 mx-2 hover:bg-harlequin-500 ${true?"hey":"Yo"}`}onClick={()=>props.setPlayerChoice(props.rock)}>Rock</button>
-            <button className="button border p-2 mx-2 hover:bg-harlequin-500"  onClick={()=>props.setPlayerChoice(props.paper)}>Paper</button>
-            <button className="button border p-2 mx-2 hover:bg-harlequin-500"  onClick={()=>props.setPlayerChoice(props.scissors)}>Scissors</button>
+            <button 
+                className={`button border p-2 mx-2 hover:bg-harlequin-500 focus:bg-harlequin-500 focus:ring focus:ring-red-500 ${props.playerChoice === props.rock?"bg-purple-500":null}`}
+                onClick={()=>props.setPlayerChoice(props.rock)}
+            >
+                Rock&#9968;
+            </button>
+            <button 
+                className={`button border p-2 mx-2 hover:bg-harlequin-500 focus:bg-harlequin-500 focus:ring focus:ring-red-500 ${props.playerChoice === props.paper?"bg-purple-500":null}`}  
+                onClick={()=>props.setPlayerChoice(props.paper)}
+            >   
+                Paper&#127794;	
+
+            </button>
+            <button 
+                className={`button border p-2 mx-2 hover:bg-harlequin-500 focus:bg-harlequin-500 focus:ring focus:ring-red-500  ${props.playerChoice === props.scissors?"bg-purple-500":null}`}  
+                onClick={()=>props.setPlayerChoice(props.scissors)}
+            >   
+                Scissors&#9986;
+
+                </button>
         </section>
     </>
 }
