@@ -38,7 +38,7 @@ import { useState } from "react";
 //create function that sets button state to 0, onclick passes value of const
 
 
-function gameLogic(player1Choice,computerPick) {
+export function gameLogic(player1Choice,computerPick) {
   console.log(player1Choice, computerPick)
   switch (((player1Choice % 3) - (computerPick % 3) + 3) % 3) { 
     

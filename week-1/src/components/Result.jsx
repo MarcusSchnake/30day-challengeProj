@@ -12,4 +12,5 @@ const Result = ({who = 'no one yet'}) => {
     )
 }
 
+
 export default Result;
