@@ -1,5 +1,3 @@
-
-
 const WeaponChoiceDisplay = (props) => {
     
     /* Pass a choice function to record user choice to parent component

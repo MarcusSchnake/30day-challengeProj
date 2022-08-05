@@ -25,8 +25,6 @@ import { useState } from "react";
   const rock = 2;
   const scissors = 3;
   
-  
-
   function computerPick(){
 
     return Math.floor(Math.random()* 3 )+1;
@@ -58,18 +56,25 @@ export function gameLogic(player1Choice,computerPick) {
 
 function App() {
   const[playerChoice, setPlayerChoice] = useState(null)
-  gameLogic(playerChoice, computerPick());
+  const runFight = () => {
+    gameLogic(playerChoice, computerPick());
+  }
   return (
     <div className="App">
       <Result />
-      <ChoiceDisplay />
+      <ChoiceDisplay
+      playerChoice = {playerChoice}
+      />
       <WeaponChoiceDisplay 
       paper={paper} 
       rock = {rock} 
       scissors = {scissors}
       setPlayerChoice= {(num)=>setPlayerChoice(num)}
       playerChoice = {playerChoice}/>
-      <FightButton />
+      <FightButton
+      playerChoice = {playerChoice}
+      runFight = {runFight}
+      />
     </div>
   );
 };
