@@ -24,46 +24,79 @@ import { useState } from "react";
   const paper = 1;
   const rock = 2;
   const scissors = 3;
-  
-  function computerPick(){
-
-    return Math.floor(Math.random()* 3 )+1;
-
+  const weps = {
+    1: "paper",
+    2: "rock", 
+    3: "scissors", 
   }
   
+  // const selectionName = [
+  //   {name:"paper",value:1},
+  //   {name:"rock",value:2},
+  //   {name:"scissors", value:3},
+  // ];
+  
+  // const mapName = new Map()
+  // mapName.set(
+  //   "paper", {
+  //     value:1
+  //   });
+  // mapName.set(
+  //   "rock", {
+  //     value:2
+  //   });
+  //   mapName.set(
+  //     "scissors", {
+  //       value:3
+  //   });
+  
 
 
-//create function that sets button state to 0, onclick passes value of const
+function computerPick(){
+    return Math.floor(Math.random()* 3 )+1;
 
+  };
+  console.log(computerPick())
 
 export function gameLogic(player1Choice,computerPick) {
-  console.log(player1Choice, computerPick)
+  let winnerWinner = ""
+ 
   switch (((player1Choice % 3) - (computerPick % 3) + 3) % 3) { 
     
     case (1):
-      console.log("player lost");
+      winnerWinner = "computer wins";
       break;
     case (2):
-      console.log("player won");
+      winnerWinner= "player wins";
       break;
     case (0):
-      console.log("Great minds work alike, re-run it!");
+      winnerWinner= "No One Draw";
       break;
     default:
-      console.log("Opps!");
+      winnerWinner= "Opps!";
   };
+  
+  return winnerWinner;
+  
 };
+ 
 
 function App() {
   const[playerChoice, setPlayerChoice] = useState(null)
+  const[winner, setWinner] = useState("")
+  const[weapon, setWeapon] = useState("")
   const runFight = () => {
-    gameLogic(playerChoice, computerPick());
+  setWinner(gameLogic(playerChoice, computerPick()));
+  setWeapon(weps[playerChoice]);
   }
   return (
     <div className="App">
-      <Result />
+      <Result
+      who = {winner}
+      weapon = {weapon}
+      />
       <ChoiceDisplay
-      playerChoice = {playerChoice}
+      playerChoice = {playerChoice} 
       />
       <WeaponChoiceDisplay 
       paper={paper} 
@@ -80,3 +113,5 @@ function App() {
 };
 
 export default App;
+
+
