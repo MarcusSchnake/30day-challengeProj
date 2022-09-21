@@ -25,4 +25,6 @@ export default function HomePage() {
       <button onClick={handleClick}>Like({likes})</button>
     </div>
   );
-}
+};
+
+

@@ -73,7 +73,7 @@ export function gameLogic(player1Choice,computerPick) {
       winnerWinner= "No One Draw";
       break;
     default:
-      winnerWinner= "Opps!";
+      winnerWinner= "Oops!";
   };
   
   return winnerWinner;
